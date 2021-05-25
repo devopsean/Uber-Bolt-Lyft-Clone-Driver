@@ -4,12 +4,7 @@
 </p>
 
 
-<p align="center">	
-   <a href="https://www.linkedin.com/in/isaac-batista-b097521a8/">
-      <img alt="Isaac Batista" src="https://img.shields.io/badge/-bisaacm1-8257E5?style=flat&logo=Linkedin&logoColor=white" />
-   </a>
 
-</p>
 
 
 # :pushpin: Table of Contents

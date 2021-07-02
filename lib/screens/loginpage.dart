@@ -9,6 +9,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
+import 'package:http/http.dart';
 
 class LoginPage extends StatefulWidget {
   static const String id = 'login';
@@ -20,14 +21,16 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
+    login();
     // TODO: implement initState
     super.initState();
-    login();
+
   }
 
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   void showSnackBar(String title) {
+
     final snackbar = SnackBar(
       content: Text(
         title,
@@ -70,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
       //print(userRef);
       userRef.once().then((DataSnapshot snapshot) {
         if (snapshot.value != null) {
-          print('whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
+
           Navigator.pushNamedAndRemoveUntil(
               context, MainPage.id, (route) => false);
         }

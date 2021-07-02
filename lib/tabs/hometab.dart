@@ -4,6 +4,7 @@ import 'package:cab_driver/globalvariables.dart';
 import 'package:cab_driver/helpers/pushnotificationservice.dart';
 import 'package:cab_driver/widgets/AvailabilityButton.dart';
 import 'package:cab_driver/widgets/ConfirmSheet.dart';
+import 'package:cab_driver/widgets/NotificationDialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -46,18 +47,20 @@ class _HomeTabState extends State<HomeTab> {
   //async
   {
     currentFirebaseUser =
-    //await
-    FirebaseAuth.instance.currentUser;
-PushNotificationService pushNotificationService = PushNotificationService();
-pushNotificationService.initialize();
-pushNotificationService.getToken();
+        //await
+        FirebaseAuth.instance.currentUser;
+    PushNotificationService pushNotificationService = PushNotificationService();
+    pushNotificationService.initialize(context);
+    pushNotificationService.getToken();
   }
-@override
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getCurrentDriverInfo();
   }
+
   @override
   Widget build(BuildContext context) {
     return Stack(

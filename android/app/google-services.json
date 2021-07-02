@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:784303276461:android:311f590d7a3870f1d82124",
+        "mobilesdk_app_id": "1:784303276461:android:bf8e6cf85ede3d06d82124",
         "android_client_info": {
           "package_name": "com.example.cab_driver"
         }
@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "784303276461-ri770hsgap9jfb15u6839js177fpiql6.apps.googleusercontent.com",
+              "client_id": "784303276461-9tt4as910tbt42n5kvcveec7psjp1fd2.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.cabRider"
+                "bundle_id": "com.example.cabDriver"
               }
             }
           ]
@@ -68,10 +68,10 @@
               "client_type": 3
             },
             {
-              "client_id": "784303276461-ri770hsgap9jfb15u6839js177fpiql6.apps.googleusercontent.com",
+              "client_id": "784303276461-9tt4as910tbt42n5kvcveec7psjp1fd2.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.cabRider"
+                "bundle_id": "com.example.cabDriver"
               }
             }
           ]

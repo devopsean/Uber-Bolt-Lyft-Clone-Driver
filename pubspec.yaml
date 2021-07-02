@@ -43,6 +43,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_geofire: ^2.0.0
   firebase_messaging: ^10.0.0
+  flutter_local_notifications: ^5.0.0+4
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  assets_audio_player: ^3.0.3+3
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+    - sounds/
 
   fonts:
     - family: Brand-Bold

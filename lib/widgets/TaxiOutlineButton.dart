@@ -11,6 +11,7 @@ class TaxiOutlineButton extends StatelessWidget {
   TaxiOutlineButton({this.title, this.onPressed, this.color});
 
   @override
+
   Widget build(BuildContext context) {
     return OutlineButton(
         borderSide: BorderSide(color: color),

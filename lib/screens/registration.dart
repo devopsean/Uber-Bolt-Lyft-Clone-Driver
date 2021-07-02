@@ -207,7 +207,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             return;
                           }
                           if (phoneController.text.length < 10) {
-                            showSnackBar('Please provide a valid phonbe no');
+                            showSnackBar('Please provide a valid phone numberc');
                             return;
                           }
                           if (!emailController.text.contains('@')) {

@@ -38,6 +38,7 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   font_awesome_flutter: ^9.0.0
   animated_text_kit: ^4.2.1
+  intl: ^0.17.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -46,6 +47,8 @@ dependencies:
   flutter_local_notifications: ^5.0.0+4
   modal_progress_hud_nsn: ^0.1.0-nullsafety-1
   assets_audio_player: ^3.0.3+3
+  toast: ^0.1.5
+  maps_toolkit: ^2.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,16 +1,19 @@
 import 'dart:async';
 import 'package:cab_driver/brand_colors.dart';
 import 'package:cab_driver/globalvariables.dart';
+import 'package:cab_driver/helpers/helpermethods.dart';
 import 'package:cab_driver/helpers/pushnotificationservice.dart';
 import 'package:cab_driver/widgets/AvailabilityButton.dart';
 import 'package:cab_driver/widgets/ConfirmSheet.dart';
-import 'package:cab_driver/widgets/NotificationDialog.dart';
+import 'package:cab_driver/datamodels/driver.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_geofire/flutter_geofire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../globalvariables.dart';
 
 class HomeTab extends StatefulWidget {
   @override
@@ -20,8 +23,6 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   GoogleMapController mapController;
   Completer<GoogleMapController> _controller = Completer();
-
-  Position currentPosition;
 
   DatabaseReference tripRequestRef;
 
@@ -49,9 +50,21 @@ class _HomeTabState extends State<HomeTab> {
     currentFirebaseUser =
         //await
         FirebaseAuth.instance.currentUser;
+    DatabaseReference driverRef = FirebaseDatabase.instance
+        .reference()
+        .child('drivers/${currentFirebaseUser.uid}');
+    driverRef.once().then((DataSnapshot snapshot) {
+      if (snapshot != null) {
+
+currentDriverInfo = Driver.fromSnapshot(snapshot);
+
+      }
+    });
     PushNotificationService pushNotificationService = PushNotificationService();
     pushNotificationService.initialize(context);
     pushNotificationService.getToken();
+
+    HelperMethods.getHistoryInfo(context);
   }
 
   @override

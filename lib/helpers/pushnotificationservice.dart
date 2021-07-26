@@ -55,11 +55,12 @@ class PushNotificationService {
     rideRef.once().then((DataSnapshot snapshot) {
       Navigator.pop(context);
       if (snapshot.value != null) {
-
-    assetsAudioPlayer.open(
-      Audio('sounds/alert.mp3'),
-    ).then((value) => assetsAudioPlayer.play());
-    assetsAudioPlayer.play();
+        assetsAudioPlayer
+            .open(
+              Audio('sounds/alert.mp3'),
+            )
+            .then((value) => assetsAudioPlayer.play());
+        assetsAudioPlayer.play();
         print('snapshot is ${snapshot.value}');
         double pickupLat =
             double.parse(snapshot.value['location']['latitude'].toString());
@@ -73,6 +74,8 @@ class PushNotificationService {
             double.parse(snapshot.value['destination']['longitude'].toString());
         String destinationAddress = snapshot.value['destination_address'];
         String paymentMethod = snapshot.value['payment_method'];
+        String riderName = snapshot.value['rider_name'];
+        String riderPhone = snapshot.value['rider_phone'];
 
         TripDetails tripDetails = TripDetails();
         tripDetails.rideID = rideID;
@@ -81,7 +84,9 @@ class PushNotificationService {
         tripDetails.pickup = LatLng(pickupLat, pickupLng);
         tripDetails.destination = LatLng(destinationLat, destinationLng);
         tripDetails.paymentMethod = paymentMethod;
+        tripDetails.riderName = riderName;
 
+        tripDetails.riderPhone= riderPhone;
         showDialog(
           barrierDismissible: false,
           context: context,

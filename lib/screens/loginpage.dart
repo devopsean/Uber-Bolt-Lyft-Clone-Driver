@@ -24,13 +24,11 @@ class _LoginPageState extends State<LoginPage> {
     login();
     // TODO: implement initState
     super.initState();
-
   }
 
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   void showSnackBar(String title) {
-
     final snackbar = SnackBar(
       content: Text(
         title,
@@ -57,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
     );
     final UserCredential result = await FirebaseAuth.instance
         .signInWithEmailAndPassword(
-            email: "onuohasean@yahoo.com", password: "akpambo")
+            email: "seanonuoha@gmail.com", password: "qqqqqqqqqq")
         .catchError((ex) {
       Navigator.pop(context);
       PlatformException thisEx = ex;
@@ -65,7 +63,6 @@ class _LoginPageState extends State<LoginPage> {
     });
     User user = result.user;
     if (user != null) {
-
       //verify login
       // Navigator.pushNamed(context, MainPage.id);
       DatabaseReference userRef =
@@ -73,9 +70,10 @@ class _LoginPageState extends State<LoginPage> {
       //print(userRef);
       userRef.once().then((DataSnapshot snapshot) {
         if (snapshot.value != null) {
-
           Navigator.pushNamedAndRemoveUntil(
               context, MainPage.id, (route) => false);
+        } else {
+          print('CHECK SNAPSHSOT VALUE NULL');
         }
       });
     }

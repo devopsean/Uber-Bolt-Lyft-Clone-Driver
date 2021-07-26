@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cab_driver/datamodels/tripdetails.dart';
+import 'package:cab_driver/dataprovider.dart';
 import 'package:cab_driver/globalvariables.dart';
 import 'package:cab_driver/screens/loginpage.dart';
 import 'package:cab_driver/screens/mainpage.dart';
@@ -15,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,13 +57,10 @@ Future<void> main() async {
   //     AndroidFlutterLocalNotificationsPlugin>()
   //     ?.createNotificationChannel(channel);
 
-
-
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(MyApp());
 }
-
 
 ///GetRide Id
 String getRideID(Map<String, dynamic> message) {
@@ -79,22 +78,21 @@ String getRideID(Map<String, dynamic> message) {
 
 ///FetRide Info
 void fetchRideInfo(String rideID) {
-
   DatabaseReference rideRef =
-  FirebaseDatabase.instance.reference().child('rideRequest/$rideID');
+      FirebaseDatabase.instance.reference().child('rideRequest/$rideID');
   rideRef.once().then((DataSnapshot snapshot) {
     if (snapshot.value != null) {
       print('snapshot is ${snapshot.value}');
       double pickupLat =
-      double.parse(snapshot.value['location']['latitude'].toString());
+          double.parse(snapshot.value['location']['latitude'].toString());
       double pickupLng =
-      double.parse(snapshot.value['location']['longitude'].toString());
+          double.parse(snapshot.value['location']['longitude'].toString());
 
       String pickupAddress = snapshot.value['pickup_address'].toString();
       double destinationLat =
-      double.parse(snapshot.value['destination']['latitude'].toString());
+          double.parse(snapshot.value['destination']['latitude'].toString());
       double destinationLng =
-      double.parse(snapshot.value['destination']['longitude'].toString());
+          double.parse(snapshot.value['destination']['longitude'].toString());
       String destinationAddress = snapshot.value['destination_address'];
       String paymentMethod = snapshot.value['payment_method'];
 
@@ -111,6 +109,7 @@ void fetchRideInfo(String rideID) {
     }
   });
 }
+
 ///Background Notifications
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('background is being handled');
@@ -122,22 +121,25 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Brand-Regular',
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider(
+      create: (context) => AppData(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Brand-Regular',
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        initialRoute: RegistrationPage.id,
+        // (currentFirebaseUser == null) ? LoginPage.id : MainPage.id,
+        routes: {
+          MainPage.id: (context) => MainPage(),
+          VehicleInfoPage.id: (context) => VehicleInfoPage(),
+          RegistrationPage.id: (context) => RegistrationPage(),
+          LoginPage.id: (context) => LoginPage()
+        },
+        // home: MainPage(),
       ),
-      initialRoute: LoginPage.id,
-      // (currentFirebaseUser == null) ? LoginPage.id : MainPage.id,
-      routes: {
-        MainPage.id: (context) => MainPage(),
-        VehicleInfoPage.id: (context) => VehicleInfoPage(),
-        RegistrationPage.id: (context) => RegistrationPage(),
-        LoginPage.id: (context) => LoginPage()
-      },
-      // home: MainPage(),
     );
   }
 }

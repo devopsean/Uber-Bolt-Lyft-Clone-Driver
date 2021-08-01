@@ -1,6 +1,6 @@
 # Uber - Lyft - Bolt - Clone
 
-An open source blueprint to your next logistics/delivery app development. This projects incorporates the [breaking changes](https://firebase.google.com/docs/cloud-messaging/migrate-v1) after the migration from legacy HTTP to HTTP v1.
+An open source blueprint to your next logistics/delivery app development. This projects incorporates the [breaking changes](https://firebase.google.com/docs/cloud-messaging/migrate-v1) after Google's migration from legacy HTTP to HTTP v1 for cloud messaging.
 It relies on the [Provider package](https://pub.dev/packages/provider) for statement management and it was designed using the MVC layout.
 
 <div>
@@ -42,12 +42,16 @@ To deploy this project:
 </div>
 
   
-## 🚀 Tech Stack
+## Tech Stack
 
 **Framework:** Flutter
 
 **Server:** Firebase
 
 **IDE:** Android Studio
+
+## Contributions
+
+I look forward to your pull requests.
 
   

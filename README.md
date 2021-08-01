@@ -4,15 +4,6 @@
 </p>
 
 
-
-
-
-# :pushpin: Table of Contents
-
-* [Technologies](#computer-technologies)
-* [Found a bug? Missing a specific feature?](#bug-issues)
-
-
 ### Mobile Screenshot
 <div align="center">
    //<img src="./.github/uber.gif" width="1000">
@@ -33,9 +24,6 @@ Feel free to **file a new issue** with a respective title and description on the
 
 # :closed_book: License
 
-Made with 💜 by [Sean Onuoha](https://github.com/megaton47) 🚀.
-
-
 Give a ⭐️ if this project helped you!
 
 
@@ -43,6 +31,12 @@ Give a ⭐️ if this project helped you!
 # Uber - Lyft - Bolt - Clone
 
 An open source blueprint to your next logistics/delivery app development.
+
+
+# :pushpin: Table of Contents
+
+* [Technologies](#computer-technologies)
+* [Found a bug? Missing a specific feature?](#bug-issues)
 
 ## Implementation Guide
 
@@ -64,12 +58,7 @@ To deploy this project:
 * Get a temporary Oauth to enable you send notifications. Legacy Firebase codes have been updated [here](https://firebase.google.com/docs/cloud-messaging/migrate-v1).
 ## Installation
 
-Install my-project with npm
 
-```bash
-  npm install my-project
-  cd my-project
-```
     
 ## Screenshots
 

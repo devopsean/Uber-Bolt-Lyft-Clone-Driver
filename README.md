@@ -1,32 +1,5 @@
-<!-- Logo -->
-<p align="center">
-   <img src="assets/images/icon.png" alt="WhatsApp" width="280"/>
-</p>
 
-
-### Mobile Screenshot
-<div align="center">
-   //<img src="./.github/uber.gif" width="1000">
-</div>   
-
-## :computer: 🚀 Technologies
-This project was made using the follow technologies:
-
-- ✔️ Dart
-
-- ✔️ Flutter
-
-- ✔️ Firebase
-
-# :bug: Issues
-
-Feel free to **file a new issue** with a respective title and description on the the repository. If you already found a solution to your problem, **i would love to review your pull request**!
-
-# :closed_book: License
-
-Give a ⭐️ if this project helped you!
-
-
+ 
 
 # Uber - Lyft - Bolt - Clone
 
@@ -65,7 +38,7 @@ To deploy this project:
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
   
-## Tech Stack
+## 🚀 Tech Stack
 
 **Framework:** Flutter
 

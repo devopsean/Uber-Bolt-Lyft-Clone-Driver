@@ -3,8 +3,8 @@
 An open source blueprint to your next logistics/delivery app development.
 
 <div>
-<img src="https://github.com/seanFlutter/Resources/blob/main/gallery/bolt%20logo.png" alt="feed example" height="200">
-<img src="https://github.com/seanFlutter/Resources/blob/main/gallery/uber%20logo.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/bolt%20logo.png" alt="feed example" height="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/uber%20logo.png" alt="feed example" width="200">
 </div>
 
 

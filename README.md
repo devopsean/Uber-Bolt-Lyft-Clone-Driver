@@ -43,23 +43,4 @@ To deploy this project:
 
 **IDE:** Android Studio
 
-
-
-
-
-    
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-  
-## 🚀 Tech Stack
-
-**Framework:** Flutter
-
-**Server:** Firebase
-
-**IDE:** Android Studio
-
-
   

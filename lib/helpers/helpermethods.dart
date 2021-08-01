@@ -28,7 +28,6 @@ class HelperMethods {
         'https://maps.googleapis.com/maps/api/directions/json?origin=${startPosition.latitude},${startPosition.longitude}&destination=${endPosition.latitude},${endPosition.longitude}&mode=driving&key=$mapKey';
     var response = await RequestHelper.getRequest(url);
     if (response == 'failed') {
-      print('response faileddddddddddddddddddddddddddddddddddddddddddddd');
       return null;
     }
     DirectionDetails directionDetails = DirectionDetails();
@@ -48,7 +47,7 @@ class HelperMethods {
   }
 
   static int estimateFares(DirectionDetails details, int durationValue) {
-//per km = 0.7,
+    //per km = 0.7,
     //per minute = 0.5,
     // base fare = $3 ,
     double baseFare = 3;
@@ -142,8 +141,8 @@ class HelperMethods {
     }
   }
 
-  static String formatMyDate(String datestring) {
-    DateTime thisDate = DateTime.parse(datestring);
+  static String formatMyDate(String dateString) {
+    DateTime thisDate = DateTime.parse(dateString);
     String formattedDate =
         '${DateFormat.MMMd().format(thisDate)}, ${DateFormat.y().format(thisDate)} - ${DateFormat.jm().format(thisDate)}';
 

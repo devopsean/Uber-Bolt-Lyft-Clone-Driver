@@ -25,7 +25,7 @@ Future<void> main() async {
     options: Platform.isIOS
         ? const FirebaseOptions(
             appId: '1:784303276461:ios:d269e50caa7362edd82124',
-            apiKey: 'AIzaSyCM-RJyPvjmEFEi5RInptmaFCfgjDIELCA',
+            apiKey: 'YOUR API KEY',
             projectId: 'flutter-firebase-plugins',
             messagingSenderId: '784303276461',
             databaseURL:
@@ -33,7 +33,7 @@ Future<void> main() async {
           )
         : const FirebaseOptions(
             appId: '1:784303276461:android:bf8e6cf85ede3d06d82124',
-            apiKey: 'AIzaSyB-DXDM28-apXG86HbxwKu6Q7ZI7V0BqS4',
+            apiKey: 'YOUR API KEY',
             messagingSenderId: '297855924061',
             projectId: 'flutter-firebase-plugins',
             databaseURL:
@@ -43,19 +43,7 @@ Future<void> main() async {
 
   final FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-  // const AndroidNotificationChannel channel = AndroidNotificationChannel(
-  //   'high_importance_channel', // id
-  //   'High Importance Notifications', // title
-  //   'This channel is used for important notifications.', // description
-  //   importance: Importance.max,
-  // );
-  // final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  // FlutterLocalNotificationsPlugin();
-  //
-  // await flutterLocalNotificationsPlugin
-  //     .resolvePlatformSpecificImplementation<
-  //     AndroidFlutterLocalNotificationsPlugin>()
-  //     ?.createNotificationChannel(channel);
+
 
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 

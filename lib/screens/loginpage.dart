@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
     );
     final UserCredential result = await FirebaseAuth.instance
         .signInWithEmailAndPassword(
-            email: "seanonuoha@gmail.com", password: "qqqqqqqqqq")
+            email: emailController.text, password: passwordController.text)
         .catchError((ex) {
       Navigator.pop(context);
       PlatformException thisEx = ex;
@@ -63,8 +63,8 @@ class _LoginPageState extends State<LoginPage> {
     });
     User user = result.user;
     if (user != null) {
-      //verify login
-      // Navigator.pushNamed(context, MainPage.id);
+    //  verify login
+      Navigator.pushNamed(context, MainPage.id);
       DatabaseReference userRef =
           FirebaseDatabase.instance.reference().child('drivers/${user.uid}');
       //print(userRef);
@@ -77,19 +77,7 @@ class _LoginPageState extends State<LoginPage> {
         }
       });
     }
-    //any need for this second exception? diff btw two
 
-    // final UserCredential result = await _auth
-    //     .signInWithEmailAndPassword(
-    //   email: emailController.text,
-    //   password: passwordController.text,
-    // )
-    //     .catchError((ex) {
-    //   //check errors and display message
-    //   PlatformException thisEx = ex;
-    //
-    //   showSnackBar(thisEx.message);
-    // });
   }
 
   @override

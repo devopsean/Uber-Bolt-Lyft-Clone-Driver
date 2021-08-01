@@ -32,7 +32,13 @@ To deploy this project:
     
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<div>
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20register.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20login.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20homepage%20offline.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20homepage%20online.png" alt="feed example" width="200">
+<img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/driver%20earnings.png" alt="feed example" width="200">
+</div>
 
   
 ## 🚀 Tech Stack

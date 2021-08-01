@@ -1,6 +1,7 @@
 # Uber - Lyft - Bolt - Clone
 
-An open source blueprint to your next logistics/delivery app development.
+An open source blueprint to your next logistics/delivery app development. This projects incorporates the [breaking changes](https://firebase.google.com/docs/cloud-messaging/migrate-v1) after the migration from legacy HTTP to HTTP v1.
+It relies on the [Provider package](https://pub.dev/packages/provider) for statement management and it was designed using the MVC layout.
 
 <div>
 <img src="https://github.com/seanFlutter/Resources/blob/main/Uber-bolt-lyft/bolt%20logo.png" alt="feed example" height="200">

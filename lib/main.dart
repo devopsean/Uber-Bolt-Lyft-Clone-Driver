@@ -25,7 +25,7 @@ Future<void> main() async {
     options: Platform.isIOS
         ? const FirebaseOptions(
             appId: '1:784303276461:ios:d269e50caa7362edd82124',
-            apiKey: 'YOUR API KEY',
+            apiKey: 'YOUR API KEY HERE',
             projectId: 'flutter-firebase-plugins',
             messagingSenderId: '784303276461',
             databaseURL:
@@ -33,7 +33,7 @@ Future<void> main() async {
           )
         : const FirebaseOptions(
             appId: '1:784303276461:android:bf8e6cf85ede3d06d82124',
-            apiKey: 'YOUR API KEY',
+            apiKey: 'YOUR API KEY HERE',
             messagingSenderId: '297855924061',
             projectId: 'flutter-firebase-plugins',
             databaseURL:
